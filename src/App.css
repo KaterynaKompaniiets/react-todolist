@@ -1,38 +1,196 @@
-.App {
-  text-align: center;
+.sidebar {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  height: 100%;
+  width: 252px;
+  background: #ffffff;
+  box-shadow: 2px 2px 2px #e6edf7;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sidebar h4,
+.current_tasks h4,
+li h3 {
+  font-size: 14px;
+  line-height: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidebar h4 {
+  color: #cecfef;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.sidebar h3 {
+  font-size: 16px;
+  line-height: 19px;
+  padding-bottom: 4px;
 }
 
-.App-link {
-  color: #61dafb;
+.sidebar h3,
+.sidebar h4,
+.current_tasks h2 {
+  font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar_logo {
+  padding-top: 20px;
+  padding-left: 64px;
 }
+
+.sidebar img {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+}
+
+.current_tasks h1 {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 42px;
+}
+
+.current_tasks p,
+#element_of_list h3,
+#element_of_list p {
+  font-weight: 400;
+}
+
+.all_main_info {
+  margin-left: 415px;
+  margin-top: 32px;
+}
+
+.list {
+  padding-top: 38px;
+}
+
+.task div {
+  padding-left: 20px;
+}
+
+#element_of_list {
+  background: #ffffff;
+  border: 1px solid #e8eff6;
+  box-shadow: 2px 2px 2px #e6edf7;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  margin-right: 392px;
+  position: relative;
+}
+
+#element_of_list h3,
+#element_of_list h4,
+#showOnlyUndode h4 {
+  display: inline;
+}
+
+li h3 {
+  padding-left: 10px;
+}
+
+#element_of_list h4 {
+  padding-left: 8px;
+}
+
+#element_of_list p {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+#element_of_list .due_date {
+  padding-bottom: 16px;
+  padding-top: 12px;
+}
+
+#element_of_list.title {
+  padding-bottom: 8px;
+}
+
+#element_of_list .description {
+  padding-left: 26px;
+  padding-bottom: 20px;
+}
+
+.scale {
+  display: block;
+  height: 4px;
+}
+
+#element_of_list:hover {
+  background-color: beige;
+}
+
+#toDelete {
+  width: 50px;
+  height: 30px;
+  position: absolute;
+  top: 5px;
+  right: 0px;
+}
+#toDelete:hover {
+  background-color: gray;
+  background-size: contain;
+}
+.done {
+  display: none;
+}
+.show-done .done {
+  display: block;
+}
+#showOnlyUndode,
+#addTask,
+#addTask h2 {
+  padding-bottom: 20px;
+}
+.err_empty_title {
+  opacity: 0;
+  font-size: 10px;
+  font-style: italic;
+  position: absolute;
+  color: red;
+}
+
+.undone.overdue h3 {
+  color: #e63241;
+}
+
+.undone span {
+  background: #d9d9d9;
+}
+
+.done_task.overdue span,
+.done_task span {
+  background: #58ac83;
+}
+.undone.overdue span {
+  background: #e63241;
+}
+
+.done_task h4 {
+  color: #878787;
+  text-decoration: line-through;
+}
+.due_date .displayDate {
+  opacity: 0;
+}
+
+#lists {
+  height: 100%;
+  margin-top: 40px;
+  padding-left: 15px;
+  padding-right: 5px;
+}
+
+#lists li h3{
+  height: 6%;
+  border-bottom: 1px solid #e8eff6;
+  border-radius: 4px;
+  position: relative;
+  padding-top: 20px;
+
+}
+
+#lists li :hover {
+  background-color: #f0efef;
+}
+
+
