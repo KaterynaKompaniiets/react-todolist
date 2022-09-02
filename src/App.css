@@ -1,5 +1,5 @@
 .sidebar {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   height:100%;
@@ -143,13 +143,14 @@ li h3 {
   padding-bottom: 20px;
 }
 #addTask{
-  width: 20%;
+  width: 60%;
+  height: 10%;
+  position: relative;
 }
 #addTask form {
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
-
+  flex-direction: row;
 }
 
 #showOnlyUndode{
@@ -161,9 +162,10 @@ li h3 {
   font-style: italic;
   position: absolute;
   color: red;
+  bottom: 0;
 }
 
-.undone.overdue h3 {
+.overdue h3 {
   color: #e63241;
 }
 
@@ -175,7 +177,7 @@ li h3 {
 .done_task span {
   background: #58ac83;
 }
-.undone.overdue span {
+.overdue span {
   background: #e63241;
 }
 

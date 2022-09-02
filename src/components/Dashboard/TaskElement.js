@@ -1,7 +1,6 @@
 import React from "react";
 
-const TaskElement = (props) => {
-    let task =props.task
+const TaskElement = ({task, removeTask, toggleTask}) => {
 
 function getValidDate(date) {
     if (date) {
@@ -11,10 +10,17 @@ function getValidDate(date) {
     } else return "";
 }
 
+function isOverdueTask(task) {
+    if (!task.due_date) {
+        return false
+    }
+    let currentDate = new Date(Date.now())
+    return (task.due_date < currentDate) ? true : false;
+}
     return (
-        <li id="element_of_list">
-            <div className="task">
-                <button id="toDelete" onClick="removeTask(event)">Delete</button>
+        <li id="element_of_list" >
+            <div className={(task.done ? `task done_task`: (isOverdueTask(task) ? `task overdue`: `task undone`))} >
+                <button id="toDelete" onClick={ ()=> removeTask(task.id)}>Delete</button>
                 <span className="scale"></span>
                 <div className="due_date">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +30,7 @@ function getValidDate(date) {
                     <h3>{getValidDate(task.due_date)}</h3>
                 </div> 
                 <div className="title">
-                    <input type="checkbox" onclick="changeState(event)" />
+                    <input type="checkbox" onChange={ ()=> toggleTask(task.id)}  checked={task.done ? "checked": ""}/>
                     <h4>{task.title}</h4>
                 </div>
                 <div className="description">

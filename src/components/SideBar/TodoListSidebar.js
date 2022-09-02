@@ -2,7 +2,7 @@ import React from 'react'
 import ListElement from './ListElement'
 import logo from '../SideBar/logo.svg'
 
-const TodoListSidebar = (props) => {
+const TodoListSidebar = ({lists,selectTodoList}) => {
     return (
         <div className="sidebar">
         <img src={logo} alt="no img" />
@@ -12,7 +12,7 @@ const TodoListSidebar = (props) => {
         </div>
         <ul id='lists'>
             {
-            props.lists.map(list=><ListElement key={list.id} list={list}/>)
+            lists.map(list=><ListElement key={list.id} list={list} selectTodoList ={selectTodoList}/>)
             }
             </ul>
         </div>

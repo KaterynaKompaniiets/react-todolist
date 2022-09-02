@@ -1,10 +1,11 @@
 
 import React from "react";
 
-const ListElement =(props) =>{
+const ListElement =({list, selectTodoList}) =>{
+
     return (
-        <li className="list-element">
-            <h3>{props.list.title}</h3>
+        <li className="list-element" onClick={()=> selectTodoList(list.id)}>
+            <h3>{list.title}</h3>
         </li>
     )
 }
