@@ -1,8 +1,8 @@
 .sidebar {
   position: absolute;
-  left: 0%;
-  top: 0%;
-  height: 100%;
+  left: 0;
+  top: 0;
+  height:100%;
   width: 252px;
   background: #ffffff;
   box-shadow: 2px 2px 2px #e6edf7;
@@ -55,12 +55,13 @@ li h3 {
 }
 
 .all_main_info {
-  margin-left: 415px;
-  margin-top: 32px;
+  padding-left: 415px;
+  padding-top: 32px;
 }
 
 .list {
   padding-top: 38px;
+  position: relative;
 }
 
 .task div {
@@ -136,10 +137,23 @@ li h3 {
 .show-done .done {
   display: block;
 }
-#showOnlyUndode,
+
 #addTask,
 #addTask h2 {
   padding-bottom: 20px;
+}
+#addTask{
+  width: 20%;
+}
+#addTask form {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+}
+
+#showOnlyUndode{
+  padding-top: 20px;
 }
 .err_empty_title {
   opacity: 0;
@@ -169,7 +183,7 @@ li h3 {
   color: #878787;
   text-decoration: line-through;
 }
-.due_date .displayDate {
+.due_date.displayDate {
   opacity: 0;
 }
 

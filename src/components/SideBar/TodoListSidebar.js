@@ -1,6 +1,6 @@
 import React from 'react'
 import ListElement from './ListElement'
-import logo from './logo.svg'
+import logo from '../SideBar/logo.svg'
 
 const TodoListSidebar = (props) => {
     return (
@@ -12,7 +12,7 @@ const TodoListSidebar = (props) => {
         </div>
         <ul id='lists'>
             {
-            props.lists.map(list=><ListElement list={list}/>)
+            props.lists.map(list=><ListElement key={list.id} list={list}/>)
             }
             </ul>
         </div>
