@@ -7,8 +7,9 @@ import './index.css'
             description: "",
             due_date: null,
             done: false,
-            listID: selectedlist[0].listID
+            listID: 1
           });
+
 
     const onsubmit = (event)=>{
         event.preventDefault()
