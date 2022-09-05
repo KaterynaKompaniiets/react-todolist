@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react"
 import './index.css' 
 
-    const NewTaskFom = ({addTask, selectedlist})=> {
+    const NewTaskForm = ({addTask})=> {
         const [form, setForm] = useState({
             title: "",
             description: "",
             due_date: null,
-            done: false,
-            listID: 1
+            done: false
           });
-
 
     const onsubmit = (event)=>{
         event.preventDefault()
@@ -19,7 +17,6 @@ import './index.css'
         }else{
 
         }
-
     }
     function handleChange(e) {
         setForm((state) => ({
@@ -44,4 +41,4 @@ import './index.css'
     )
 }
 
-export default NewTaskFom;
+export default NewTaskForm;

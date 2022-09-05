@@ -10,16 +10,17 @@ function getValidDate(date) {
     } else return "";
 }
 
-function isOverdueTask(task) {
-    if (!task.due_date) {
+function isOverdueTask(due_date) {
+    if (!due_date) {
         return false
     }
+    due_date = new Date(due_date)
     let currentDate = new Date(Date.now())
-    return (task.due_date < currentDate) ? true : false;
+    return (due_date < currentDate) ? true : false;
 }
     return (
         <li id="element_of_list" >
-            <div className={(task.done ? `task done_task`: (isOverdueTask(task) ? `task overdue`: `task undone`))} >
+            <div className={(task.done ? `task done_task`: (isOverdueTask(task.due_date) ? `task overdue`: `task undone`))} >
                 <button id="toDelete" onClick={ ()=> removeTask(task.id)}>Delete</button>
                 <span className="scale"></span>
                 <div className="due_date">
@@ -30,7 +31,7 @@ function isOverdueTask(task) {
                     <h3>{getValidDate(task.due_date)}</h3>
                 </div> 
                 <div className="title">
-                    <input type="checkbox" onChange={ ()=> toggleTask(task.id)}  checked={task.done ? "checked": ""}/>
+                    <input type="checkbox" onChange={ ()=> toggleTask(task.id, task.done)}  checked={task.done ? "checked": ""}/>
                     <h4>{task.title}</h4>
                 </div>
                 <div className="description">

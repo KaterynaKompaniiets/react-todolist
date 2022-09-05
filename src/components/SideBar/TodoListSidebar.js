@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ListElement from './ListElement'
 import logo from '../SideBar/logo.svg'
+import { getLists } from '../../rest/rest'
 
-const TodoListSidebar = ({lists,selectTodoList}) => {
+const TodoListSidebar = ({selectTodoList}) => {
+    const [lists , setLists] = useState([])
+  
+    useEffect(()=>{
+        getLists().then(res => { setLists(res);
+        })
+    },[])
+    
     return (
         <div className="sidebar">
         <img src={logo} alt="no img" />
